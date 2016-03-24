@@ -64,4 +64,4 @@ for department in sorted({ d[9] for d in s_emp[1::] }): print ( department, (lam
 
 #select dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500;
 print "\nselect dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500"
-for department in { d[9] for d in s_emp[1::] }: print (lambda deptno, avgSal: (deptno, avgSal) if avgSal > 1500 else '')(department, (lambda l: round(sum(l) / len(l), 2))(map(float,[ e[7] for e in s_emp[1::] if e[9] == department ])))
+for department in { d[9] for d in s_emp[1::] }: print (lambda deptno, avgSal: (deptno, avgSal) if avgSal > 1500 else 'hi')(department, (lambda l: round(sum(l) / len(l), 2))(map(float,[ e[7] for e in s_emp[1::] if e[9] == department ])))
