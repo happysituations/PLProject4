@@ -25,7 +25,7 @@ s_emp = (('ID', 'LAST_NAME', 'FIRST_NAME', 'USERID', 'START_DATE', 'COMMENTS', '
          (8, 'BURNS', 'BEN', 'BURNSBA', '7-APR-90', '', 'WAREHOUSE MANAGER', 1500, 0, 43, 2),
          (9, 'CATSKILL', 'ANTOINETTE', 'CATSKIAW', '9-FEB-92', '', 'WAREHOUSE MANAGER', 1700, 0, 44, 2))
 
-dept_id = (('ID', 'NAME','REGION_ID'),
+s_dept = (('ID', 'NAME','REGION_ID'),
            (10, 'FINANCE',1),
            (31,'SALES',1),
            (32, 'SALES', 2),
@@ -41,17 +41,24 @@ dept_id = (('ID', 'NAME','REGION_ID'),
 
 
 #select * from s_dept;
+print s_emp[1::]
 
 #select last_name, first_name, title, salary from s_emp;
+print "\nselect last_name, first_name, title, salary from s_emp", [[i[1],i[2],i[6],i[7]] for i in s_emp[1::]]
 
 #select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40;
+print "\nlast_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40", [[i[1],i[2],i[6],i[7]] for i in s_emp[1::] if i[7] > 1500 and i[9] > 40]
 
 #select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by last_name;
 
+
 #select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by salary desc;
+
 
 #select last_name, first_name, title, salary, name from s_emp e join s_dept d on(e.dept_id = d.id);
 
+
 #select dept_id, avg(salary) from s_emp group by dept_id order by dept_id;
+
 
 #select dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500;
