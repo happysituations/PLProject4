@@ -24,3 +24,17 @@ s_emp = (('ID', 'LAST_NAME', 'FIRST_NAME', 'USERID', 'START_DATE', 'COMMENTS', '
          (7, 'HAWKINS', 'ROBERTA', 'HAWKINRT', '14-MAY-90', '', 'WAREHOUSE MANAGER', 1650, 0, 42, 2),
          (8, 'BURNS', 'BEN', 'BURNSBA', '7-APR-90', '', 'WAREHOUSE MANAGER', 1500, 0, 43, 2),
          (9, 'CATSKILL', 'ANTOINETTE', 'CATSKIAW', '9-FEB-92', '', 'WAREHOUSE MANAGER', 1700, 0, 44, 2))
+
+dept_id = (('ID', 'NAME','REGION_ID'),
+           (10, 'FINANCE',1),
+           (31,'SALES',1),
+           (32, 'SALES', 2),
+           (33, 'SALES', 3),
+           (34, 'SALES',4),
+           (35, 'SALES',5),
+           (41,'OPERATIONS',1),
+           (42,'OPERATIONS',2),
+           (43, 'OPERATIONS',3),
+           (44,'OPERATIONS', 4),
+           (45, 'OPERATIONS',5),
+           (50, 'ADMINISTRATIONAL',5))
