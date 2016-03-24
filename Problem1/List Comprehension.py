@@ -38,3 +38,20 @@ dept_id = (('ID', 'NAME','REGION_ID'),
            (44,'OPERATIONS', 4),
            (45, 'OPERATIONS',5),
            (50, 'ADMINISTRATIONAL',5))
+
+
+#select * from s_dept;
+
+#select last_name, first_name, title, salary from s_emp;
+
+#select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40;
+
+#select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by last_name;
+
+#select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by salary desc;
+
+#select last_name, first_name, title, salary, name from s_emp e join s_dept d on(e.dept_id = d.id);
+
+#select dept_id, avg(salary) from s_emp group by dept_id order by dept_id;
+
+#select dept_id, avg(salary) from s_emp group by dept_id having avg(salary) < 1500;
