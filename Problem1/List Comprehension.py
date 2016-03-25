@@ -53,7 +53,7 @@ print "\nselect last_name, first_name, title, salary from s_emp where salary > 1
 print "\nselect last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by last_name", sorted([[i[1],i[2],i[6],i[7]] for i in s_emp[1::] if i[7] > 1500 and i[9] > 40], key =lambda x: (x[0]))
 
 #select last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by salary desc;
-print "\nselect last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by salary desc", sorted([[i[1],i[2],i[6],i[7]] for i in s_emp[1::] if i[7] > 1500 and i[9] > 40], key =lambda x: (x[3]))
+print "\nselect last_name, first_name, title, salary from s_emp where salary > 1500 and dept_id > 40 order by salary desc", sorted([[i[1],i[2],i[6],i[7]] for i in s_emp[1::] if i[7] > 1500 and i[9] > 40], key =lambda x: (x[3]), reverse =True)
 
 #select last_name, first_name, title, salary, name from s_emp e join s_dept d on(e.dept_id = d.id);
 print "\nselect last_name, first_name, title, salary, name from s_emp e join s_dept d on(e.dept_id = d.id)", [[i[1],i[2],i[6],i[7], j[1]] for i in s_emp[1::] for j in s_dept[1::] if i[9] == j[0] ]
