@@ -1,9 +1,7 @@
 /**
  * Created by Happy on 3/24/2016.
  */
-/**
- * Created by pcannata on 2/27/16.
- */
+
 "use strict";
 
 var list = function() {
@@ -34,8 +32,7 @@ var list = function() {
             },
         };
 
-        var F = function () {
-        };
+        var F = function () {};
         var f = new F();
 
         // public data
@@ -73,46 +70,46 @@ var list = function() {
             }
         }
 
+        f.iterator = function() {
+
+            var lastElement = null;
+
+            var G = function() {};
+            var g = new G();
+
+            g.next = function () {
+                if (lastElement == null) {
+                    lastElement = l.head;
+                }
+                else {
+                    if (lastElement.next == null) {
+                        return null;
+                    }
+                    else {
+                        lastElement = lastElement.next;
+                    }
+                }
+                return lastElement.data;
+            }
+            return g;
+        };
+
         return f;
     }();
     return list;
 };
 
 var l1 = new list();
-l1.concat('a')
-l1.cons('b')
+l1.concat('a');
+l1.cons('b');
 document.writeln("l1: " + l1.first() + "<BR>");
 document.writeln("l1: " + l1.length() + "<BR>");
+var iter = l1.iterator()
+document.writeln("l1: " + l1.length() + "<BR>");
+document.writeln("l1: " + iter.next() + "<BR>");
+document.writeln("l1: " + iter.next() + "<BR>");
+document.writeln("l1: " + iter.next() + "<BR>");
 
-var l2 = new list();
-l2.cons('c')
-document.writeln("<BR>l2: " + l2.car() + "<BR>");
-document.writeln("l2: " + l2.length() + "<BR>");
 
-var l3 = new list();
-var l4 = new list();
-l3.cons('x')
-l3.cons('y')
-l3.cons('z')
-l4.cons(l3);
-l4.cons(l3.car());
 
-document.writeln("<BR>l3: " + l3.car());
-while(l3.length() > 0) {
-    document.writeln(", " + l3.cdr().car());
-}
 
-var h = l4.run('head');
-document.writeln("<BR>l4: " + h.data);
-for(var i = 1; i < l4.length(); i++) {
-    h = h.next;
-    document.writeln(", " + h.data);
-}
-
-l4.map(function(x){return x+x})
-var h = l4.run('head');
-document.writeln("<BR>l4: " + h.data);
-for(var i = 1; i < l4.length(); i++) {
-    h = h.next;
-    document.writeln(", " + h.data);
-}
