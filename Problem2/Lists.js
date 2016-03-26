@@ -29,7 +29,7 @@ var list = function() {
                     l.currentNode = node;
                     l.length++;
                 }
-            },
+            }
         };
 
         var F = function () {};
@@ -48,7 +48,7 @@ var list = function() {
                 l.length--;
             }
             return this;
-        }
+        };
         f.concat = f.cons = function(e){
             if (typeof e === 'string' || e instanceof String) {l.add(e);}
             else {
@@ -58,7 +58,7 @@ var list = function() {
                     n = n.next;
                 }
             }
-        }
+        };
         f.length = function(){return l.length};
         f.map = function(f){
             if (f instanceof Function) {
@@ -68,7 +68,7 @@ var list = function() {
                     n = n.next;
                 }
             }
-        }
+        };
 
         f.iterator = function() {
 
@@ -90,7 +90,7 @@ var list = function() {
                     }
                 }
                 return lastElement.data;
-            }
+            };
             return g;
         };
 
@@ -99,6 +99,7 @@ var list = function() {
     return list;
 };
 
+/* tester code
 var l1 = new list();
 l1.concat('a');
 l1.cons('b');
@@ -109,7 +110,6 @@ document.writeln("l1: " + l1.length() + "<BR>");
 document.writeln("l1: " + iter.next() + "<BR>");
 document.writeln("l1: " + iter.next() + "<BR>");
 document.writeln("l1: " + iter.next() + "<BR>");
-
-
+*/
 
 
